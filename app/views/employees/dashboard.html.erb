@@ -1,0 +1,25 @@
+<div class="dashboard-container">
+  <h2>Enter Employee Details</h2>
+
+    <%= form_with url: employee_show_path, method: :post, local: true do |form| %>
+      <div class="field">
+        <%= form.label :name, "Employee Name" %>
+        <Br>
+        <%= form.text_field :name %>
+      </div>
+<br>
+      <div class="field">
+        <%= form.label :user_id, "User ID" %>
+        <br>
+        <%= form.text_field :user_id %>
+      </div>
+<br>
+      <div class="actions">
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+<br>
+  
+</div>
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 

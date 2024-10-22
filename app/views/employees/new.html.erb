@@ -1,0 +1,63 @@
+<div  class="form-containers">
+  <h2>Add New Employee</h2>
+
+<%= form_with model: @employee, url: admin_employees_path, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <br>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, "Email" %>
+    <br>
+    <%= form.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id, "User Id" %>
+    <br>
+    <%= form.text_field :user_id, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position, "Position" %>
+    <br>
+    <%= form.text_field :position, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department, "Department" %>
+    <br>
+    <%= form.text_field :department, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary, "salary" %>
+    <br>
+    <%= form.text_field :salary, class: "form-control" %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :phone_number, "Phone Number" %>
+    <br>
+    <%= form.telephone_field :phone_number, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_birth, "Date of Birth" %>
+    <br>
+    <%= form.date_field :date_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit: "Add Employee", class: "btn btn-secondary" %>
+  </div>
+<% end %>
+
+</div>
+
+
+
+

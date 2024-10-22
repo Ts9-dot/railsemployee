@@ -1,0 +1,42 @@
+<h1>Admin Dashboard</h1>
+<p>Welcome, <%= current_user.email %>!</p>
+
+<div>
+  <h2>Statistics</h2>
+  <p>Total Employees: <%= @total_employees %></p>
+  <p>Total Users: <%= @total_users %></p>
+</div>
+<h3>Recent Employees</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recent_employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.created_at.strftime("%B %d, %Y") %></td>
+        <td>
+            <%= link_to 'View', admin_employee_path(employee) %> |
+            <% if current_user.admin? %>
+              <%= link_to 'Edit', edit_employee_path(employee) %> |
+            <% end %>           
+            <%= link_to 'Delete', admin_employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Manage Employees', admin_employees_path %>
+<%= link_to 'View Reports', admin_reports_path %>
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>        
+

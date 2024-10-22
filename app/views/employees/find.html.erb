@@ -1,0 +1,17 @@
+<h1>Find Employee Report</h1>
+
+<%= form_with url: find_employee_employees_path, method: :post, local: true do |f| %>
+  <div>
+    <%= f.label :name, "Employee Name" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email, "Employee Email" %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.submit "Generate Report" %>
+  </div>
+<% end %>

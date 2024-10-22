@@ -1,0 +1,7 @@
+<h1>Search for Employee</h1>
+
+<%= form_with url: employee_path, method: :get do %>
+  <%= label_tag :user_id, "User ID" %>
+  <%= text_field_tag :user_id %>
+  <%= submit_tag "Submit" %>
+<% end %>

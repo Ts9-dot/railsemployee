@@ -1,0 +1,18 @@
+<h1>Welcome to the Employee Management System</h1>
+
+
+ <%= form_with(url: user_session_path, local: true) do |form| %>
+
+
+  <%
+=begin%>
+ <% if flash[:alert] %>
+    <p style="color: red;"><%= flash[:alert] %></p>
+  <% end %>  
+<%
+=end%>
+
+
+  <p><%= link_to 'Explore', new_user_session_path, class:"btn btn-secondary" %></p>
+ 
+<% end %>

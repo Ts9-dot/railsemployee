@@ -1,0 +1,59 @@
+<h1>Edit Employee</h1>
+
+<%= form_with(model: @employee, local: true, html:{:class=>'addempform'}) do |form| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% @employee.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for @employee do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :email %>
+    <br>
+    <%= f.email_field :email %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :phone_number %>
+    <br>
+    <%= f.text_field:phone_number %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :address %>
+    <br>
+    <%= f.text_field :address %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :date_of_birth %>
+    <br>
+    <%= form.date_field :date_of_birth, class: "form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= f.label :salary %>
+    <br>
+    <%= form.number_field :salary, class: "form-control" %>
+  </div>
+<br>
+  <%= f.submit "Update Employee", class: "btn btn-secondary" %>
+<% end %>
+
+<% end %> <!-- Closing form_with block -->
+<br>
+
+<%= link_to 'Back to Dashboard', admin_dashboard_path, class: 'btn btn-secondary' %>

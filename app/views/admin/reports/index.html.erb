@@ -1,0 +1,27 @@
+<h1>Reports</h1>
+<!-- Add logic to list reports here -->
+
+<div class="form-container">
+  <h2>Find Employee Report</h2>
+
+  <%= form_with url: find_employee_report_path, method: :post, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "Employee Name" %>
+      <br>
+      <%= f.text_field :name, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Employee Email" %>
+      <br>
+      <%= f.email_field :email, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Generate Report", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to "Download PDF", download_pdf_admin_reports_path(format: :pdf), target: "_blank" %>

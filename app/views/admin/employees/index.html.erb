@@ -1,0 +1,35 @@
+<%
+=begin%>
+ 
+ <!-- app/views/admin/employees/index.html.erb -->
+<h1>Employees</h1>
+
+<%= link_to 'Add New Employee', new_admin_employee_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Department</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.phone_number %></td>
+        <td><%= employee.department %></td>
+        <td>
+          <%= link_to 'View', admin_employee_path(employee) %> <!-- Ensure this is correct -->
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+ 
+<%
+=end%>

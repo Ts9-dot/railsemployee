@@ -1,0 +1,9 @@
+<%= form_with url: employee_path, method: :get do |f| %>
+  <%= f.label :name, "Employee Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :user_id, "User ID" %>
+  <%= f.text_field :user_id %>
+
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Employee Report</h1>
+
+<p>
+  <strong>Name:</strong> <%= @employee.name %><br>
+  <strong>Position:</strong> <%= @employee.position %><br>
+  <strong>Email:</strong> <%= @employee.email %><br>
+  <strong>Salary:</strong> <%= number_to_currency(@employee.salary) %><br>
+</p>
